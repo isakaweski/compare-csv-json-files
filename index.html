@@ -9,11 +9,11 @@
     </head>
     <body>
         <label for="json-file">Arquivo de VAGAS:</label>
-        <input type="file" id="json-file" name="json-file"/>
-        <button id="compare-files" onclick="compareAndListByLocation()">Comparar vagas com soft skills</button>
-        <button id="compare-files" onclick="compareSoftSkillsPerLocation()">Contabilizar soft skills por localização</button>
+        <input type="file" id="json-file" name="json-file"/><br>
+        <button onclick="softSkillsPorVaga()">Soft skills por vaga</button>
+        <button onclick="softSkillsPorLocalização()">Soft skills por localização</button>
         <hr />
-        <!-- <div id='indexCity'></div> -->
         <div id="list"></div>
+        <div id="soft-skills"></div>
     </body>
 </html>

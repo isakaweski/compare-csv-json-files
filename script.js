@@ -5,387 +5,222 @@ var jobsList;
 const REGEX = new RegExp(/\d+(,\d{3})*(\.\d*)/);
 
 var softSkills = [
-    { name: "ativo" },
-    { name: "profissional" },
-    { name: "lógico" },
-    { name: "completo" },
-    { name: "responsável" },
-    { name: "inovação" },
-    { name: "construção" },
-    { name: "autonomia" },
-    { name: "responsabilidade" },
-    { name: "flexível" },
-    { name: "colaborativo" },
-    { name: "tato" },
-    { name: "afiado" },
-    { name: "disciplina" },
-    { name: "desafiador" },
-    { name: "disponibilidade" },
-    { name: "inteligente" },
-    { name: "eficiente" },
-    { name: "líder" },
-    { name: "positivo" },
-    { name: "criatividade" },
-    { name: "independente" },
-    { name: "treinamento" },
-    { name: "criativo" },
-    { name: "proativo" },
-    { name: "maneira" },
-    { name: "trabalho em equipe" },
-    { name: "comprometido" },
-    { name: "escrever" },
-    { name: "organizado" },
-    { name: "empreendedor" },
-    { name: "paixão" },
-    { name: "ação orientada" },
-    { name: "vontade de aprender" },
-    { name: "motivado" },
-    { name: "comprometimento" },
-    { name: "energia" },
-    { name: "iniciativa" },
-    { name: "curioso" },
-    { name: "analítico" },
-    { name: "atento" },
-    { name: "critério" },
-    { name: "preciso" },
-    { name: "compreensão" },
-    { name: "comunicativo" },
-    { name: "flexibilidade" },
-    { name: "produtivo" },
-    { name: "consistente" },
-    { name: "empatia" },
-    { name: "Liderança" },
-    { name: "pronto" },
-    { name: "articular" },
-    { name: "fidelidade" },
-    { name: "prático" },
-    { name: "tomar decisões" },
-    { name: "agradável" },
-    { name: "apresentação" },
-    { name: "talentoso" },
-    { name: "verbal e escrita" },
-    { name: "inspirado" },
-    { name: "paciente" },
-    { name: "habilidades de comunicação" },
-    { name: "atenção aos detalhes" },
-    { name: "atenção aos detalhes" },
-    { name: "competitivo" },
-    { name: "ético" },
-    { name: "integridade" },
-    { name: "pontual" },
-    { name: "maturidade" },
-    { name: "motivação" },
-    { name: "animado" },
-    { name: "capacidade de comunicação" },
-    { name: "cronograma" },
-    { name: "humor" },
-    { name: "dedicação" },
-    { name: "legais" },
-    { name: "organizacional" },
-    { name: "bem organizado" },
-    { name: "entusiasmo" },
-    { name: "habilidades analíticas" },
-    { name: "mente aberta" },
-    { name: "capaz de se comunicar" },
-    { name: "Espírito de equipe" },
-    { name: "versatilidade" },
-    { name: "confiante" },
-    { name: "confiável" },
-    { name: "Disponibilidade para viagens" },
-    { name: "eficácia" },
-    { name: "habilidades de programação" },
-    { name: "pensamento crítico" },
-    { name: "respeitoso" },
-    { name: "seja criativo" },
-    { name: "visão estratégica" },
-    { name: "atento aos detalhes" },
-    { name: "bom senso" },
-    { name: "capacidade de aprender" },
-    { name: "capacidade de vender" },
-    { name: "dedicada" },
-    { name: "entusiasmado" },
-    { name: "habilidades de liderança" },
-    { name: "habilidades organizacionais" },
-    { name: "honestidade" },
-    { name: "Inovativa" },
-    { name: "pessoa responsável" },
-    { name: "planejamento estratégico" },
-    { name: "tolerante" },
-    { name: "ambicioso" },
-    { name: "assertividade" },
-    { name: "atitude positiva" },
-    { name: "calma" },
-    { name: "capacidade de adaptação" },
-    { name: "cortesia" },
-    { name: "detalhado" },
-    { name: "gerenciamento de equipe" },
-    { name: "habilidades interpessoais" },
-    { name: "habilidades para resolver problemas" },
-    { name: "paciência" },
-    { name: "pontualidade" },
-    { name: "precisão" },
-    { name: "simpatia" },
-    { name: "Solução de problemas" },
-    { name: "solucionador de problema" },
-    { name: "aconselhamento" },
-    { name: "alcançar seus objetivos" },
-    { name: "capacidade de analisar" },
-    { name: "capacidade de interagir" },
-    { name: "capacidade de priorizar" },
-    { name: "conceituação" },
-    { name: "disciplinado" },
-    { name: "educado" },
-    { name: "Gerenciamento de Projetos" },
-    { name: "gerenciamento de tempo" },
-    { name: "habilidades de análise" },
-    { name: "habilidades de comunicação interpessoal" },
-    { name: "Habilidades de gestão de tempo" },
-    { name: "maduro" },
-    { name: "membro da equipe" },
-    { name: "negociador" },
-    { name: "pensamento criativo" },
-    { name: "pensamento inovador" },
-    { name: "pessoa dinâmica" },
-    { name: "profissionalismo" },
-    { name: "relações humanas" },
-    { name: "sensibilidade" },
-    { name: "senso de responsabilidade" },
-    { name: "tolerância" },
-    { name: "tomar iniciativa" },
-    { name: "trabalhador" },
-    { name: "trabalhar bem em equipe" },
-    { name: "trabalhar de forma colaborativa" },
-    { name: "visão de futuro" }
+    { counter: 0, name: "ativo" },
+    { counter: 0, name: "profissional" },
+    { counter: 0, name: "lógico" },
+    { counter: 0, name: "completo" },
+    { counter: 0, name: "responsável" },
+    { counter: 0, name: "inovação" },
+    { counter: 0, name: "construção" },
+    { counter: 0, name: "autonomia" },
+    { counter: 0, name: "responsabilidade" },
+    { counter: 0, name: "flexível" },
+    { counter: 0, name: "colaborativo" },
+    { counter: 0, name: "tato" },
+    { counter: 0, name: "afiado" },
+    { counter: 0, name: "disciplina" },
+    { counter: 0, name: "desafiador" },
+    { counter: 0, name: "disponibilidade" },
+    { counter: 0, name: "inteligente" },
+    { counter: 0, name: "eficiente" },
+    { counter: 0, name: "líder" },
+    { counter: 0, name: "positivo" },
+    { counter: 0, name: "criatividade" },
+    { counter: 0, name: "independente" },
+    { counter: 0, name: "treinamento" },
+    { counter: 0, name: "criativo" },
+    { counter: 0, name: "proativo" },
+    { counter: 0, name: "maneira" },
+    { counter: 0, name: "trabalho em equipe" },
+    { counter: 0, name: "comprometido" },
+    { counter: 0, name: "escrever" },
+    { counter: 0, name: "organizado" },
+    { counter: 0, name: "empreendedor" },
+    { counter: 0, name: "paixão" },
+    { counter: 0, name: "ação orientada" },
+    { counter: 0, name: "vontade de aprender" },
+    { counter: 0, name: "motivado" },
+    { counter: 0, name: "comprometimento" },
+    { counter: 0, name: "energia" },
+    { counter: 0, name: "iniciativa" },
+    { counter: 0, name: "curioso" },
+    { counter: 0, name: "analítico" },
+    { counter: 0, name: "atento" },
+    { counter: 0, name: "critério" },
+    { counter: 0, name: "preciso" },
+    { counter: 0, name: "compreensão" },
+    { counter: 0, name: "comunicativo" },
+    { counter: 0, name: "flexibilidade" },
+    { counter: 0, name: "produtivo" },
+    { counter: 0, name: "consistente" },
+    { counter: 0, name: "empatia" },
+    { counter: 0, name: "Liderança" },
+    { counter: 0, name: "pronto" },
+    { counter: 0, name: "articular" },
+    { counter: 0, name: "fidelidade" },
+    { counter: 0, name: "prático" },
+    { counter: 0, name: "tomar decisões" },
+    { counter: 0, name: "agradável" },
+    { counter: 0, name: "apresentação" },
+    { counter: 0, name: "talentoso" },
+    { counter: 0, name: "verbal e escrita" },
+    { counter: 0, name: "inspirado" },
+    { counter: 0, name: "paciente" },
+    { counter: 0, name: "habilidades de comunicação" },
+    { counter: 0, name: "atenção aos detalhes" },
+    { counter: 0, name: "atenção aos detalhes" },
+    { counter: 0, name: "competitivo" },
+    { counter: 0, name: "ético" },
+    { counter: 0, name: "integridade" },
+    { counter: 0, name: "pontual" },
+    { counter: 0, name: "maturidade" },
+    { counter: 0, name: "motivação" },
+    { counter: 0, name: "animado" },
+    { counter: 0, name: "capacidade de comunicação" },
+    { counter: 0, name: "cronograma" },
+    { counter: 0, name: "humor" },
+    { counter: 0, name: "dedicação" },
+    { counter: 0, name: "legais" },
+    { counter: 0, name: "organizacional" },
+    { counter: 0, name: "bem organizado" },
+    { counter: 0, name: "entusiasmo" },
+    { counter: 0, name: "habilidades analíticas" },
+    { counter: 0, name: "mente aberta" },
+    { counter: 0, name: "capaz de se comunicar" },
+    { counter: 0, name: "Espírito de equipe" },
+    { counter: 0, name: "versatilidade" },
+    { counter: 0, name: "confiante" },
+    { counter: 0, name: "confiável" },
+    { counter: 0, name: "Disponibilidade para viagens" },
+    { counter: 0, name: "eficácia" },
+    { counter: 0, name: "habilidades de programação" },
+    { counter: 0, name: "pensamento crítico" },
+    { counter: 0, name: "respeitoso" },
+    { counter: 0, name: "seja criativo" },
+    { counter: 0, name: "visão estratégica" },
+    { counter: 0, name: "atento aos detalhes" },
+    { counter: 0, name: "bom senso" },
+    { counter: 0, name: "capacidade de aprender" },
+    { counter: 0, name: "capacidade de vender" },
+    { counter: 0, name: "dedicada" },
+    { counter: 0, name: "entusiasmado" },
+    { counter: 0, name: "habilidades de liderança" },
+    { counter: 0, name: "habilidades organizacionais" },
+    { counter: 0, name: "honestidade" },
+    { counter: 0, name: "Inovativa" },
+    { counter: 0, name: "pessoa responsável" },
+    { counter: 0, name: "planejamento estratégico" },
+    { counter: 0, name: "tolerante" },
+    { counter: 0, name: "ambicioso" },
+    { counter: 0, name: "assertividade" },
+    { counter: 0, name: "atitude positiva" },
+    { counter: 0, name: "calma" },
+    { counter: 0, name: "capacidade de adaptação" },
+    { counter: 0, name: "cortesia" },
+    { counter: 0, name: "detalhado" },
+    { counter: 0, name: "gerenciamento de equipe" },
+    { counter: 0, name: "habilidades interpessoais" },
+    { counter: 0, name: "habilidades para resolver problemas" },
+    { counter: 0, name: "paciência" },
+    { counter: 0, name: "pontualidade" },
+    { counter: 0, name: "precisão" },
+    { counter: 0, name: "simpatia" },
+    { counter: 0, name: "Solução de problemas" },
+    { counter: 0, name: "solucionador de problema" },
+    { counter: 0, name: "aconselhamento" },
+    { counter: 0, name: "alcançar seus objetivos" },
+    { counter: 0, name: "capacidade de analisar" },
+    { counter: 0, name: "capacidade de interagir" },
+    { counter: 0, name: "capacidade de priorizar" },
+    { counter: 0, name: "conceituação" },
+    { counter: 0, name: "disciplinado" },
+    { counter: 0, name: "educado" },
+    { counter: 0, name: "Gerenciamento de Projetos" },
+    { counter: 0, name: "gerenciamento de tempo" },
+    { counter: 0, name: "habilidades de análise" },
+    { counter: 0, name: "habilidades de comunicação interpessoal" },
+    { counter: 0, name: "Habilidades de gestão de tempo" },
+    { counter: 0, name: "maduro" },
+    { counter: 0, name: "membro da equipe" },
+    { counter: 0, name: "negociador" },
+    { counter: 0, name: "pensamento criativo" },
+    { counter: 0, name: "pensamento inovador" },
+    { counter: 0, name: "pessoa dinâmica" },
+    { counter: 0, name: "profissionalismo" },
+    { counter: 0, name: "relações humanas" },
+    { counter: 0, name: "sensibilidade" },
+    { counter: 0, name: "senso de responsabilidade" },
+    { counter: 0, name: "tolerância" },
+    { counter: 0, name: "tomar iniciativa" },
+    { counter: 0, name: "trabalhador" },
+    { counter: 0, name: "trabalhar bem em equipe" },
+    { counter: 0, name: "trabalhar de forma colaborativa" },
+    { counter: 0, name: "visão de futuro" }
 ];
 
-function contabilizaSoftSkillsPorLocalizacao(lista) {
-	var newList = [];
-	let location = '';
-	lista.forEach(listaItem => {
-		if (location != listaItem.location) {
-			location = listaItem.location;
-
-			softSkills.forEach(item => {
-				newList.push({ name: item.name, counter: 0 })
-			});
-
-			lista.forEach(item => {
-				newList.forEach(skill => {
-					if (skill.name === item.name) {
-						return {
-							...skill,
-							counter: skill.counter++,
-						}
-					}
-				});
-			});
-		}
-	});
-}
-
-function counterSoftSkillsTotal(lista) {
-	softSkills.forEach(item => {
-		newList.push({ name: item.name, counter: 0 })
-	});
-	console.log(newList)
-	lista.forEach(item => {
-		newList.forEach(skill => {
-			if (skill.name === item.name) {
-				return {
-					...skill,
-					counter: skill.counter++,
-				}
-			}
-		})
-	});
-}
-
-function compareSoftSkillsPerLocation() {
-
-	var html = '';
-	let softSkillsCounter = [];
-
-	jobsList.forEach(jobCity => {
-		if (jobCity.jobs.length) {
-			jobCity.jobs.forEach(job => {
-				softSkills.forEach(skill => {
-					if (job.description.includes(skill.name)) {
-						softSkillsCounter.push({
-							name: skill.name,
-							location: job.location,
-						});
-					}
-				});
-			});
-		}
-	});
-
-	html += contabilizaSoftSkillsPorLocalizacao(softSkillsCounter);
-
-    $("#list").html(html);
-}
-
-function compareAndListByLocation() {
+function softSkillsPorVaga() {
 	var html = '<table>';
 	let softSkillsCounter = [];
 	html += '<thead><tr><th>Título da vaga</th><th>Senioridade</th><th>Salário</th><th>Descrição</th><th>Localização</th><th>Soft skills</th></tr></thead>';
 
-	jobsList.forEach(jobCity => {
-		if (jobCity.jobs.length) {
-			jobCity.jobs.forEach(job => {
-				html += '<tr>';
-					html += '<td>'+job.title+'</td>';
-                    html += '<td>';
-                        const jobTitle = job.title.toLowerCase();
-                        if (jobTitle.includes('jr') || jobTitle.includes('júnior') || jobTitle.includes('junior')) {
-                            html += 'Junior';
-                        } else if (jobTitle.includes('pl') || jobTitle.includes('plêno') || jobTitle.includes('pleno')) {
-                            html += 'Pleno';
-                        } else if (jobTitle.includes('sr') || jobTitle.includes('sênior') || jobTitle.includes('senior')) {
-                            html += 'Sênior';
-                        } else {
-                            html += 'Não especificado';
-                        }
-                    html += '</td>';
-                    html += '<td>';
-                        if (REGEX.test(job.description)) {
-                            html += job.description.match(REGEX);
-                        } else {
-                            html += 'Não tem salário';
-                        }
-                    html += '</td>';
-					html += '<td>'+job.description+'</td>';
-					html += '<td width=100>'+job.location+'</td>';
-					html += '<td>';
-						softSkills.forEach(skill => {
-							if (job.description.includes(skill.name)) {
-								html += skill.name+', ';
-								softSkillsCounter.push({
-									name: skill.name,
-									location: job.location,
-								})
-							}
-						})
-					html += '</td>';
-				html += '</tr>';
-			});
-		}
+	jobsList.forEach(item => {
+        html += '<tr>';
+            html += '<td>'+item.title+'</td>';
+            html += '<td>'+item.senioridade+'</td>';
+            html += '<td>';
+                if (REGEX.test(item.description)) {
+                    html += item.description.match(REGEX);
+                } else {
+                    html += 'Não tem salário';
+                }
+            html += '</td>';
+            html += '<td>'+item.description+'</td>';
+            html += '<td width=100>'+item.location+'</td>';
+            html += '<td>';
+                softSkills.forEach(skill => {
+                    if (item.description.includes(skill.name)) {
+                        html += skill.name+', ';
+                        softSkillsCounter.push({
+                            name: skill.name,
+                            location: item.location,
+                        })
+                    }
+                })
+            html += '</td>';
+        html += '</tr>';
 	});
-
-	console.log(softSkillsCounter);
 
 	html += '</table>';
     $("#list").html(html);
 }
 
-function counterSoftSkills() {
+function softSkillsPorLocalização() {
+    const softSkillsCounterList = [];
+    jobsList.forEach(job => {
+        const desc = job.description.toLowerCase();
+        softSkills.forEach(skill => {
+            console.log(desc, skill);
 
-}
-
-function compare() {
-    var table = '';
-    table += '<table><tr><th>skill name</th><th>qty</th></tr>';
-    softSkillsList.forEach(skill => {
-		var counter = 0;
-        jobsList.forEach(jobCity => {
-            if (jobCity.jobs.length > 0) {
-                jobCity.jobs.forEach(job => {
-                    if (job.description.includes(skill.name)) {
-                        counter++;
-					}
-                })
-            }
-		})
-
-        table += '<tr><td>'+skill.name+'</td><td>'+counter+'</td></tr>';
-
+            // if (desc.includes(skill.name)) {
+            //     softSkillsCounterList.push({
+            //         ...skill,
+            //         counter: skill.counter++
+            //     });
+            // }
+        });
     });
-    table += '</table>';
-    $("#list").html(table);
+    console.log(softSkillsCounterList);
 }
-
-function displayJobsCities(data) {
-	var table = "<h1>Jobs</h1>";
-
-	data.cities.forEach(item => {
-		table += '<h2>'+ item.name +'</h2>'; // nome da cidade
-		table += '<table border=1>';
-			table += '<tr><th>Nome da vaga</th><th>Descrição</th></tr>';
-
-			item.jobs.forEach(job => {
-				if (job) {
-					table += '<tr>';
-					table += '<td>'+ job.title +'</td>';
-					table += '<td>'+ job.description +'</td>';
-					table += '</tr>';
-				}
-			})
-		table += '</table>';
-	});
-
-	return table;
-}
-
-function displaySoftSkills(results) {
-	var data = results.data;
-	var table = "<h1>Soft skills</h1><table border=1 class='table'>";
-
-		table+= "<tr>";
-		table+= "<th>name</th>";
-		table+= "</tr>";
-
-	for(i=0;i<data.length;i++){
-		table+= "<tr>";
-		var cells = data[i];
-		table+= "<td>";
-		table+= cells['name'];
-		table+= "</td>";
-		table+= "</tr>";
-	}
-	table+= "</table>";
-	return table
-}
-
 
 function handleJobs(evt) {
     var file_to_read = evt.target.files[0];
     var fileread = new FileReader();
     fileread.onload = function(e) {
-        var content = e.target.result;
-        // console.log(content);
-        var intern = JSON.parse(content); // Array of Objects.
-        var table = displayJobsCities(intern)
-        // $("#list").html(table);
-        jobsList = intern.cities;
+        jobsList = JSON.parse(e.target.result);
     };
     fileread.readAsText(file_to_read);
 }
 
-
-function handleSoftSkills(evt) {
-	var file = evt.target.files[0];
-
-	Papa.parse(file, {
-	header: true,
-	dynamicTyping: true,
-	delimiter: "",
-	complete: function(results) {
-			data = results;
-			var table = displaySoftSkills(data);
-			// $("#list").html(table);
-			softSkillsList = data.data;
-		}
-	});
-}
-
-// $(document).ready(function(){
-// 	$("#csv-file").change(handleSoftSkills);
-// });
-
 $(document).ready(function(){
 	$("#json-file").change(handleJobs);
 });
-
-// $(document).ready(function(){
-// 	$("#compare-files").click(compareAndListByLocation);
-// });
